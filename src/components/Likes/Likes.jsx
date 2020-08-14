@@ -7,22 +7,22 @@ class Likes extends Component{
             return(
                 <div>
                     <button onClick={ () => this.props.likeImage(this.props.image.id)}>Like</button>
-                    <h4>No one likes this photo T_T
-                    <br/> Be the first!</h4>
+                    <p>No one likes this photo T_T
+                    <br/> Be the first!</p>
                 </div>
             )
         }else if (this.props.image.likes === 1) {
             return(
                 <div>
                     <button onClick={ () => this.props.likeImage(this.props.image.id)}>Like</button>
-                    <h4>{this.props.image.likes} person likes this photo</h4>
+                    <p>{this.props.image.likes} person likes this photo!</p>
                 </div>
             )
         }else {
             return(
                 <div>
                     <button onClick={ () => this.props.likeImage(this.props.image.id)}>Like</button>
-                    <h4>{this.props.image.likes} people like this photo</h4>
+                    <p>{this.props.image.likes} people like this photo!</p>
                 </div>
             )
         }

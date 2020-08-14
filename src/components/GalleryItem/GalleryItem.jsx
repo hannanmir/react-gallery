@@ -2,16 +2,37 @@ import React, { Component } from 'react';
 import Likes from '../Likes/Likes.jsx';
 
 class GalleryItem extends Component{
+    state = {
+        display: false
+    }
+
+    clickImage = () => {
+        this.setState({
+            display: !this.state.display,
+        })
+    }
 
     render() {
-        return(
-            <div className="pic">
-                <div>
-                    <img src={this.props.image.path} alt={this.props.image.description}/>
+        if (this.state.display === true) {
+            return(
+                <div className="pic">
+                    <div>
+                        <img src={this.props.image.path} alt={this.props.image.description} onClick={ () => this.clickImage()}/>
+                        <h4>{this.props.image.description}</h4>
+                    </div>
+                    <Likes image={this.props.image} likeImage={this.props.likeImage}/>
                 </div>
-                <Likes image={this.props.image} likeImage={this.props.likeImage}/>
-            </div>
-        )
+            )
+        } else {
+            return(
+                <div className="pic">
+                    <div>
+                        <img src={this.props.image.path} alt={this.props.image.description} onClick={ () => this.clickImage()}/>
+                    </div>
+                    <Likes image={this.props.image} likeImage={this.props.likeImage}/>
+                </div>
+            )
+        }   
     }
 }
 

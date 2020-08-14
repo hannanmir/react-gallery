@@ -9,7 +9,7 @@ class StudentList extends Component{
             <>
                 {this.props.galleryList.map( (image) => {
                     return(
-                        <GalleryItem key={image.id} image={image} likeImage={this.props.likeImage}/>
+                        <GalleryItem key={image.id} image={image} likeImage={this.props.likeImage} />
                     )
                 })}
             </>
