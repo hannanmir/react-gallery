@@ -5,7 +5,7 @@ const galleryItems = [
     { id: 4, path: 'images/4.jpg', description: 'Do not be decieved, he is not a heterochromat.', likes: 0 },
     { id: 5, path: 'images/5.jpg', description: 'Senior Photo?', likes: 0 },
     { id: 6, path: 'images/6.jpg', description: 'Willow showing off her elegance.', likes: 0 },
-    { id: 7, path: 'images/7.jpg', description: 'So you see thats where the trouble began. That smile. That damned smile.', likes: 0 },
+    { id: 7, path: 'images/7.jpg', description: '"So you see thats where the trouble began. That smile. That damned smile."', likes: 0 },
     { id: 8, path: 'images/8.jpg', description: 'Tired after a long day of being cute.', likes: 0 },
     { id: 9, path: 'images/9.jpg', description: 'Willow strikes a dramatic pose.', likes: 0 },
     { id: 10, path: 'images/10.jpg', description: 'Aspen one-ups her sister in a show of elegance.', likes: 0 },

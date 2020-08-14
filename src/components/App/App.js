@@ -1,9 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
-import Gallery from '../Gallery/Gallery.jsx';
-
+import axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList.jsx';
 
 class App extends Component {
+  state ={
+    galleryList: [],
+  }
+
+  componentDidMount() {
+    console.log('App Mounted');
+    this.getGallery();
+  }
+  
+  getGallery = () => {
+    axios.get('/gallery')
+    .then( (response) => {
+      console.log(response.data);
+      this.setState({
+        galleryList: response.data
+      })
+    }).catch( (error) => {
+      console.log('error in get galleryList', error);
+    }) 
+  }
+
+  likeImage = (id) => {
+    axios.put(`/gallery/like/${id}`)
+    .then( () => {
+      this.getGallery();
+    }).catch( (error) => {
+      console.log('error in PUT', error);
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -11,7 +42,7 @@ class App extends Component {
           <h1 className="App-title">Gallery of my Cats</h1>
         </header>
         <br/>
-        <Gallery />
+        <GalleryList galleryList={this.state.galleryList} likeImage={this.likeImage} />
       </div>
     );
   }
