@@ -19,7 +19,7 @@ class GalleryItem extends Component{
                     <div>
                         <img src={this.props.image.path} alt={this.props.image.description} onClick={ () => this.clickImage()}/>
                         <h2><span>{this.props.image.description}</span></h2>
-                    </div><br/>
+                    </div>
                     <Likes image={this.props.image} likeImage={this.props.likeImage}/>
                 </div>
             )
