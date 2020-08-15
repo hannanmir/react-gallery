@@ -1,9 +1,30 @@
 img {
-    max-width: 10000px;
-    max-height: 500px;
+    max-width: 500px;
+    max-height: 350px;
 }
 
 .pic {
+    position: relative; 
+    width: 500px;
+    height: 450px;
     border-radius: 20px;
     border-style: solid;
+    float: left;
+    margin: 20px;
 }
+
+h2 { 
+    position: absolute; 
+    top: 225px; 
+    left: 0; 
+    width: 100%; 
+  }
+  
+ h2 span { 
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.4);
+   padding: 10px; 
+} 
