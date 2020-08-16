@@ -7,6 +7,7 @@ import GalleryList from '../GalleryList/GalleryList.jsx';
 import Input from '../Input/Input.jsx';
 
 
+
 class App extends Component {
   state ={
     galleryList: [],
