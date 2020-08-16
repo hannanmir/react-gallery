@@ -14,7 +14,7 @@ This app is a react based image gallery. Users can upload images and provides de
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+![Screenshot](https://github.com/hannanmir/react-gallery/blob/master/public/images/Screenshot.png)
 
 ### Prerequisites
 
