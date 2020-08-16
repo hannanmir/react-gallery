@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Likes from '../Likes/Likes.jsx';
 
+
 class GalleryItem extends Component{
     state = {
         display: false
