@@ -20,7 +20,7 @@ class GalleryItem extends Component{
                         <img src={this.props.image.path} alt={this.props.image.description} onClick={ () => this.clickImage()}/>
                         <h2><span>{this.props.image.description}</span></h2>
                     </div>
-                    <Likes image={this.props.image} likeImage={this.props.likeImage}/>
+                    <Likes image={this.props.image} likeImage={this.props.likeImage} deleteImage={this.props.deleteImage} />
                 </div>
             )
         } else {
@@ -29,7 +29,7 @@ class GalleryItem extends Component{
                     <div>
                         <img src={this.props.image.path} alt={this.props.image.description} onClick={ () => this.clickImage()}/>
                     </div>
-                    <Likes image={this.props.image} likeImage={this.props.likeImage}/>
+                    <Likes image={this.props.image} likeImage={this.props.likeImage} deleteImage={this.props.deleteImage} />
                 </div>
             )
         }   

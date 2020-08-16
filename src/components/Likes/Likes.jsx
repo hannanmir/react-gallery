@@ -7,6 +7,7 @@ class Likes extends Component{
             return(
                 <div>
                     <button onClick={ () => this.props.likeImage(this.props.image.id)}>Like</button>
+                    <button onClick={ () => this.props.deleteImage(this.props.image.id)}>Delete</button>
                     <p>No one likes this photo T_T</p>
                 </div>
             )
@@ -14,6 +15,7 @@ class Likes extends Component{
             return(
                 <div>
                     <button onClick={ () => this.props.likeImage(this.props.image.id)}>Like</button>
+                    <button onClick={ () => this.props.deleteImage(this.props.image.id)}>Delete</button>
                     <p>{this.props.image.likes} person likes this photo!</p>
                 </div>
             )
@@ -21,6 +23,7 @@ class Likes extends Component{
             return(
                 <div>
                     <button onClick={ () => this.props.likeImage(this.props.image.id)}>Like</button>
+                    <button onClick={ () => this.props.deleteImage(this.props.image.id)}>Delete</button>
                     <p>{this.props.image.likes} people like this photo!</p>
                 </div>
             )

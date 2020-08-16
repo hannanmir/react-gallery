@@ -35,4 +35,39 @@ router.get('/', (req, res) => {
     });
 })
 
+// POST route
+router.post('/', (req, res) => {
+    let newImage = req.body;
+    console.log('Adding new image:', newImage);
+    let queryText = `
+        INSERT INTO "images" ("path", "description") 
+        VALUES ($1, $2);`;
+    pool.query(queryText, [newImage.path, newImage.description])
+    .then(result => {
+        res.sendStatus(201);
+    })
+    .catch(error => {
+        console.log(`Error adding new image`, error); 
+        res.sendStatus(500);
+    });
+});
+
+// Delete
+router.delete('/:id', (req, res) => {
+    console.log('In Delete:', req.params.id);
+    let queryText = `
+        DELETE FROM "images"
+        WHERE "id" = $1;
+        `
+    pool.query(queryText, [req.params.id])
+        .then( (result) => {
+        console.log('Image deleted');
+        res.sendStatus(200);
+    })
+    .catch( (error) => {
+        console.log('Error in delete', error);
+        res.sendStatus(500);
+    })
+});
+
 module.exports = router;
