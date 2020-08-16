@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import swal from '@sweetalert/with-react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList.jsx';
 import Input from '../Input/Input.jsx';
@@ -46,26 +47,48 @@ class App extends Component {
   }
 
   addImage = () => {
-    axios.post('/gallery', this.state.newInput)
-    .then( () => {
-      this.setState({
-        newInput: {
-          path: '',
-          description: '',
-        },
+    if (this.state.newInput.path === '' || this.state.newInput.description === '' ) {
+      swal('Please input all fields!');
+    } else {
+      axios.post('/gallery', this.state.newInput)
+      .then( () => {
+        this.setState({
+          newInput: {
+            path: '',
+            description: '',
+          },
+        })
+        swal("Added new image!", {
+          buttons: false,
+          timer: 1000,
+        })
+        this.getGallery();
+      }).catch( (error) => {
+        console.log('error in POST', error);
       })
-      this.getGallery();
-    }).catch( (error) => {
-      console.log('error in POST', error);
-    })
+    }
   }
 
   deleteImage = (id) => {
-    axios.delete(`/gallery/${id}`)
-    .then( () => {
-      this.getGallery();
-    }).catch( (error) => {
-      console.log('error in DELETE', error);
+    swal({
+      title: "Are you sure?",
+      text: "Your image will be removed permanently!",
+      icon: "warning",
+      buttons: true,
+    }).then((toDelete) => {
+      if (toDelete) {
+        swal("Your image has been deleted", {
+          icon: "success",
+        });
+        axios.delete(`/gallery/${id}`)
+        .then( () => {
+          this.getGallery();
+        }).catch( (error) => {
+          console.log('error in DELETE', error);
+        })
+      } else {
+        swal("Your image was not deleted!");
+      }
     })
   }
 
