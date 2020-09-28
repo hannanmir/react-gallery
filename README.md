@@ -10,7 +10,7 @@
 
 _Duration: Weekend Rush_
 
-This app is a react based image gallery. Users can upload images and provides descriptions and the app will display the images in a neat and ordered fashion. Further functionality includes the ability to like images and the amount of likes are shown for each image. Users can also choose to delete an and it will be removed. This application is a fullstack full CRUD development.
+This app is a react based image gallery. Users can upload images and provides descriptions and the app will display the images in a neat and ordered fashion. Further functionality includes the ability to like images and the amount of likes are shown for each image. Users can also choose to delete an image and it will be removed. This application is a fullstack full CRUD development.
 
 ## Screen Shot
 
